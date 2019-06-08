@@ -19,8 +19,8 @@
              </p>
         </header>
         <main>
-
-            <form action="file.php" method="post">
+        
+            <form action="file.php" id="app" method="post">
                 <div class="mail">
                     <p class="form__mail-txt">
                         Ваша почта * : 
@@ -39,19 +39,24 @@
 
                 <div class="car">
                     <p class="form__car-txt">
-
+                        Выберите машину, для которой будете покупать пак колёс
                     </p>
                     <select name="car" class="form__car" id="">
-                        <option value="" disabled></option>
+                        <option value="" disabled>Машина</option>
+                        <option value="car_human">Егор</option> <!-- ! 2, 4, 6 -->
+                        <option value="car_moto">Трёхколсеый лисопед</option> <!-- ! 3, 6, 9 -->
+                        <option value="car_easy">Легковушка</option> <!-- ! 4, 8, 12 -->
+                        <option value="car_hard">Грузовой</option> <!--! 6, 12, 18  -->
                     </select>
                 </div>
 
                 <div class="wheel">
                     <p class="form__wheel-txt">
-                        
+                            Заказать пак колес для выбранной машины
                     </p>
                     <select name="wheel" class="form__wheel" id="">
-
+                        <option value="" disabled>Колёса</option>
+                        <!-- TODO генерирует option через цикл (по 3 пункта) -->
                     </select>
                 </div>
 
