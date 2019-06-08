@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Practic-VUE
+        </title>
+        <meta charset='utf-8'>
+        <meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no'>
+        <link href='build/css/main.css' rel='stylesheet'>
+    </head>
+    <body>
+        <header>
+             <h1 class="form__Title">
+                 Добро пожаловать на гигантскую форму, написанную на VUE
+             </h1>
+
+             <p class="form__desc">
+                 Все, что вы увидите - написано на VUE и не применялись другие фреймворки или библиотеки
+             </p>
+        </header>
+        <main>
+
+            <form action="file.php" method="post">
+                <div class="mail">
+                    <p class="form__mail-txt">
+                        Ваша почта * : 
+                        <!-- TODO: выполнить выведения почты и подсвечивание СИМВОЛА, из-за которого форма не может быть принята -->
+                    </p>
+                    <input type='email'  name='mail' class='form__mail' required placeholder='Введите почту'>
+                </div>
+
+                <div class="phone">
+                    <p class="form__tel-txt">
+                        Ваш номер телефона
+                        <!-- TODO выполнить вывод номера телефона с подставление черточек и начальных цифр типа +38(0...) -->
+                    </p>
+                    <input type='tel'  name='phone' class='form__phone' required placeholder='Введите телефон'>
+                </div>
+
+                <div class="car">
+                    <p class="form__car-txt">
+
+                    </p>
+                    <select name="car" class="form__car" id="">
+                        <option value="" disabled></option>
+                    </select>
+                </div>
+
+                <div class="wheel">
+                    <p class="form__wheel-txt">
+                        
+                    </p>
+                    <select name="wheel" class="form__wheel" id="">
+
+                    </select>
+                </div>
+
+            </form>
+             
+        </main>
+        <footer>
+             
+        </footer>
+    <script src='src/js/vue.js'></script>
+    <!-- <script src='build/js/main.js'></script> -->
+    </body>
+</html>
