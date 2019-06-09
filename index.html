@@ -21,20 +21,21 @@
         <main>
         
             <form action="file.php" id="app" method="post">
+                
                 <div class="mail">
                     <p class="form__mail-txt">
-                        Ваша почта * : 
+                        Ваша почта * : {{mail}} 
                         <!-- TODO: выполнить выведения почты и подсвечивание СИМВОЛА, из-за которого форма не может быть принята -->
                     </p>
-                    <input type='email'  name='mail' class='form__mail' required placeholder='Введите почту'>
+                    <input type='email' v-model="mail"  name='mail' class='form__mail' required placeholder='Введите почту'>
                 </div>
 
                 <div class="phone">
                     <p class="form__tel-txt">
-                        Ваш номер телефона
+                        Ваш номер телефона * : {{phone}}
                         <!-- TODO выполнить вывод номера телефона с подставление черточек и начальных цифр типа +38(0...) -->
                     </p>
-                    <input type='tel'  name='phone' class='form__phone' required placeholder='Введите телефон'>
+                    <input v-model="phone" type='tel'  name='phone' class='form__phone' required placeholder='Введите телефон'>
                 </div>
 
                 <div class="car">
@@ -67,6 +68,24 @@
              
         </footer>
     <script src='src/js/vue.js'></script>
-    <!-- <script src='build/js/main.js'></script> -->
+    <script>
+    
+    new Vue({
+        el: '#app',
+        data: {
+          mail: '',
+          phone: '',  
+
+          // создание объекта с доступом по ключу
+          /*cars: {
+            {mechanism: 'Егор', wheel: 2},
+            {mechanism: 'Егор', wheel: 2},
+            {mechanism: 'Егор', wheel: 2},
+            {mechanism: 'Егор', wheel: 2},
+          },*/
+        }
+    });
+    
+    </script>
     </body>
 </html>
