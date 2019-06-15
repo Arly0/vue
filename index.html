@@ -44,10 +44,7 @@
                     </p>
                     <select name="car" class="form__car" id="">
                         <option value="" disabled>Машина</option>
-                        <option value="car_human">Егор</option> <!-- ! 2, 4, 6 -->
-                        <option value="car_moto">Трёхколсеый лисопед</option> <!-- ! 3, 6, 9 -->
-                        <option value="car_easy">Легковушка</option> <!-- ! 4, 8, 12 -->
-                        <option value="car_hard">Грузовой</option> <!--! 6, 12, 18  -->
+                        <option v-for="car in cars">{{car.mechanism}}</option> 
                     </select>
                 </div>
 
@@ -55,12 +52,15 @@
                     <p class="form__wheel-txt">
                             Заказать пак колес для выбранной машины
                     </p>
-                    <select name="wheel" class="form__wheel" id="">
+                    <select v-model="select" name="wheel" class="form__wheel" id="">
                         <option value="" disabled>Колёса</option>
                         <!-- TODO генерирует option через цикл (по 3 пункта) -->
+                        <option v-for="wheel in cars[0].wheel">{{wheel.num}}</option>
                     </select>
                 </div>
-
+                
+                <br>
+                <input type="submit" name="sbm" id="sbm">
             </form>
              
         </main>
@@ -77,12 +77,21 @@
           phone: '',  
 
           // создание объекта с доступом по ключу
-          /*cars: {
-            {mechanism: 'Егор', wheel: 2},
-            {mechanism: 'Егор', wheel: 2},
-            {mechanism: 'Егор', wheel: 2},
-            {mechanism: 'Егор', wheel: 2},
-          },*/
+          cars: [
+            {mechanism: 'Егор', wheel:
+                                        {num:2,num:4,num:6}
+                                    },
+            {mechanism: 'Трёхколсеый лисопед', wheel: 
+                                        {num:3,num:6,num:9}
+                                    },
+            {mechanism: 'Легковушка', wheel: 
+                                        {num:4,num:8,num:12}
+                                    },
+            {mechanism: 'Грузовой', wheel: 
+                                        {num:6,num:12,num:18}
+                                    },
+            ],
+          select: '',
         }
     });
     
